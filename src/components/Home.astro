@@ -1,0 +1,624 @@
+---
+// Import any necessary dependencies
+import img from '../assets/camera.png';
+
+// Move AOS config to a separate constant
+const aosConfig = {
+  duration: 1200,
+  once: false,
+  easing: 'ease-out-cubic',
+  mirror: true,
+  offset: 100,
+  delay: 100,
+  anchorPlacement: 'top-bottom',
+};
+---
+
+<script>
+  import AOS from 'aos';
+  import 'aos/dist/aos.css';
+  
+  // Define config directly in script
+  AOS.init({
+    duration: 1200,
+    once: false,
+    easing: 'ease-out-cubic',
+    mirror: true,
+    offset: 100,
+    delay: 100,
+    anchorPlacement: 'top-bottom',
+  });
+</script>
+
+<section class="relative min-h-[82vh] bg-gradient-to-b from-white via-red-50/30 to-white overflow-hidden">
+  <!-- Enhanced Background Elements with Movement -->
+  <div class="absolute inset-0">
+    <div class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_30%_30%,rgba(239,68,68,0.15),transparent_70%)] animate-pulse-slow"></div>
+    <div class="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(circle_at_70%_70%,rgba(220,38,38,0.12),transparent_70%)] animate-pulse-slower"></div>
+    <!-- Added floating shapes -->
+    <div class="absolute hidden lg:block">
+      {[...Array(6)].map((_, i) => (
+        <div class={`floating-shape-${i + 1} absolute rounded-full mix-blend-multiply filter blur-xl opacity-70`}></div>
+      ))}
+    </div>
+  </div>
+
+  <div class="relative container mx-auto px-6 pt-20">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+        <!-- Enhanced Left Content -->
+        <div class="space-y-5" 
+          data-aos="fade-right" 
+          data-aos-duration="1500"
+          data-aos-delay="200"
+          data-aos-anchor-placement="center-bottom">
+          <div class="space-y-3">
+            <div class="inline-flex items-center px-3 py-1.5 bg-red-50 rounded-full mb-3 hover:bg-red-100 transition-colors duration-300">
+              <span class="animate-ping w-2 h-2 bg-red-600 rounded-full mr-2"></span>
+              <span class="text-red-600 text-sm font-semibold tracking-wider">Hikvision Official</span>
+            </div>
+            
+            <h1 class="text-5xl lg:text-7xl font-bold text-gray-900 leading-tight tracking-tight animate-gradient-text">
+              Hikvision
+              <span class="relative">
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-600 via-red-700 to-red-800 animate-gradient">Excellence</span>
+                <span class="absolute bottom-0 left-0 w-full h-2 bg-gradient-to-r from-red-600/20 to-red-800/20 blur-sm"></span>
+              </span>
+              <br/>in Vision
+            </h1>
+            <p class="text-gray-600 text-xl leading-relaxed max-w-xl animate-fade-in">
+              Discover Hikvision's world-leading security cameras with ColorVu technology and AcuSense AI detection. Our innovative solutions include:
+            </p>
+            
+            <!-- Added Feature List -->
+            <div class="mt-6 space-y-4 text-gray-600">
+              <div class="flex items-start space-x-3">
+                <svg class="w-6 h-6 text-red-600 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <p class="text-lg">Advanced <span class="font-semibold">ColorVu 2.0</span> technology delivering vivid full-color imaging 24/7, even in complete darkness</p>
+              </div>
+              
+              <div class="flex items-start space-x-3">
+                <svg class="w-6 h-6 text-red-600 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <p class="text-lg"><span class="font-semibold">AcuSense 2.0</span> with AI-powered human and vehicle detection, reducing false alarms by up to 90%</p>
+              </div>
+              
+              <div class="flex items-start space-x-3">
+                <svg class="w-6 h-6 text-red-600 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <p class="text-lg"><span class="font-semibold">DarkFighter</span> ultra-low light technology with up to 4K resolution and 140dB WDR</p>
+              </div>
+            </div>
+            
+            <!-- Added Certification Badge -->
+            <div class="mt-8 flex items-center space-x-4">
+              <div class="flex items-center space-x-2 bg-red-50 px-4 py-2 rounded-lg">
+                <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+                <span class="text-sm font-medium text-red-600">ISO 9001:2015 Certified</span>
+              </div>
+              <div class="flex items-center space-x-2 bg-red-50 px-4 py-2 rounded-lg">
+                <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span class="text-sm font-medium text-red-600">NDAA Compliant</span>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- Added Trust Indicators -->
+          <div class="flex items-center gap-6 pt-4">
+            <div class="flex -space-x-4">
+              {[...Array(4)].map(() => (
+                <div class="w-10 h-10 rounded-full border-2 border-white bg-gradient-to-br from-red-100 to-red-200"></div>
+              ))}
+            </div>
+            <div class="text-sm">
+              <p class="font-semibold text-gray-900">Trusted by millions worldwide</p>
+              <div class="flex items-center gap-1 text-yellow-400">
+                {[...Array(5)].map(() => (
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Enhanced Right Content -->
+        <div class="relative flex justify-center items-center" 
+          data-aos="fade-left" 
+          data-aos-duration="1500"
+          data-aos-delay="400"
+          data-aos-anchor-placement="center-bottom">
+          <div class="relative z-10 w-[75%]">
+            <div class="relative rounded-3xl overflow-hidden shadow-2xl transform hover:scale-[1.02] transition-transform duration-500 group">
+              <!-- Enhanced decorative elements -->
+              <div class="absolute -top-4 -right-4 w-32 h-32 bg-red-100/50 rounded-full blur-xl animate-pulse-slow"></div>
+              <div class="absolute -bottom-4 -left-4 w-32 h-32 bg-red-100/50 rounded-full blur-xl animate-pulse-slower"></div>
+              
+              <div class="relative bg-gradient-to-br from-white to-red-50 p-6 rounded-3xl">
+                <img 
+                  src={img.src} 
+                  alt="Security Camera"
+                  class="w-full h-auto object-contain rounded-2xl relative z-10 transform group-hover:scale-105 transition-transform duration-500"
+                />
+                
+                <!-- Enhanced glowing effect -->
+                <div class="absolute inset-0 bg-gradient-to-t from-red-100/30 via-transparent to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              </div>
+            </div>
+
+            <!-- Enhanced Floating Stats Cards -->
+            <div class="absolute -left-8 top-1/4 p-4 bg-white/95 backdrop-blur-sm rounded-xl border border-gray-100 shadow-xl hover:shadow-2xl transition-all duration-300"
+              data-aos="zoom-in-right"
+              data-aos-delay="600"
+              data-aos-duration="1000">
+              <div class="flex items-center gap-4">
+                <div class="h-12 w-12 rounded-lg bg-gradient-to-br from-red-500 to-red-600 flex items-center justify-center">
+                  <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <div>
+                  <p class="text-gray-900 font-bold text-lg">ColorVu</p>
+                  <p class="text-red-600 text-sm font-medium">24/7 Full Color</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Added second floating card -->
+            <div class="absolute -right-8 bottom-1/4 p-4 bg-white/95 backdrop-blur-sm rounded-xl border border-gray-100 shadow-xl hover:shadow-2xl transition-all duration-300"
+              data-aos="zoom-in-left"
+              data-aos-delay="800"
+              data-aos-duration="1000">
+              <div class="flex items-center gap-4">
+                <div class="h-12 w-12 rounded-lg bg-gradient-to-br from-red-500 to-red-600 flex items-center justify-center">
+                  <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                </div>
+                <div>
+                  <p class="text-gray-900 font-bold text-lg">AcuSense</p>
+                  <p class="text-red-600 text-sm font-medium">AI Detection</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="relative container mx-auto px-4 sm:px-6">
+    <!-- Section Header -->
+    <div class="text-center max-w-3xl mx-auto mb-24" data-aos="fade-up">
+      <span class="text-red-600 font-semibold text-sm uppercase tracking-wider mb-3 block">Advanced Technology</span>
+      <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+        Discover Hikvision's
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-red-700">Innovative Features</span>
+      </h2>
+      <p class="text-gray-600 text-lg md:text-xl leading-relaxed">Experience next-generation surveillance with our cutting-edge security solutions</p>
+    </div>
+
+    <!-- Features Grid -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
+      {/* Feature Card 1 */}
+      <div class="group p-8 rounded-3xl bg-white/90 backdrop-blur-sm border border-gray-100 hover:border-red-100 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1" 
+        data-aos="flip-left"
+        data-aos-delay="200"
+        data-aos-duration="1000">
+        <div class="h-16 w-16 rounded-2xl bg-gradient-to-br from-red-500 to-red-600 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+          <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+          </svg>
+        </div>
+        <h3 class="text-2xl font-bold text-gray-900 mb-4">4K Ultra HD Resolution</h3>
+        <p class="text-gray-600 leading-relaxed">Crystal clear 8MP imaging with advanced low-light performance and wide dynamic range for unmatched clarity.</p>
+      </div>
+
+      {/* Feature Card 2 */}
+      <div class="group p-8 rounded-3xl bg-white/90 backdrop-blur-sm border border-gray-100 hover:border-red-100 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1" 
+        data-aos="flip-left"
+        data-aos-delay="400"
+        data-aos-duration="1000">
+        <div class="h-16 w-16 rounded-2xl bg-gradient-to-br from-red-600 to-red-700 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+          <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+          </svg>
+        </div>
+        <h3 class="text-2xl font-bold text-gray-900 mb-4">DeepinMind AI</h3>
+        <p class="text-gray-600 leading-relaxed">Advanced AI-powered analysis with facial recognition and intelligent behavior detection capabilities.</p>
+      </div>
+
+      {/* Feature Card 3 */}
+      <div class="group p-8 rounded-3xl bg-white/90 backdrop-blur-sm border border-gray-100 hover:border-red-100 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1" 
+        data-aos="flip-left"
+        data-aos-delay="600"
+        data-aos-duration="1000">
+        <div class="h-16 w-16 rounded-2xl bg-gradient-to-br from-red-500 to-red-800 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+          <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 008 11a4 4 0 118 0c0 1.017-.07 2.019-.203 3m-2.118 6.844A21.88 21.88 0 0015.171 17m3.839 1.132c.645-2.266.99-4.659.99-7.132A8 8 0 008 4.07M3 15.364c.64-1.319 1-2.8 1-4.364 0-1.457.39-2.823 1.07-4" />
+          </svg>
+        </div>
+        <h3 class="text-2xl font-bold text-gray-900 mb-4">ColorVu Technology</h3>
+        <p class="text-gray-600 leading-relaxed">24/7 full-color imaging even in complete darkness with state-of-the-art light-gathering sensors.</p>
+      </div>
+    </div>
+  </div>
+  <div class="absolute inset-0">
+    <div class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_30%_30%,rgba(239,68,68,0.15),transparent_70%)] animate-pulse-slow"></div>
+    <div class="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(circle_at_70%_70%,rgba(220,38,38,0.12),transparent_70%)] animate-pulse-slower"></div>
+    <!-- Added floating shapes -->
+    <div class="absolute hidden lg:block">
+      {[...Array(6)].map((_, i) => (
+        <div class={`floating-shape-${i + 1} absolute rounded-full mix-blend-multiply filter blur-xl opacity-70`}></div>
+      ))}
+    </div>
+  </div>
+
+  <div class="container mx-auto px-4 py-24">
+    <div class="grid lg:grid-cols-2 gap-20 items-center">
+      <!-- Left Content Side -->
+      <div class="order-2 lg:order-1 space-y-12" data-aos="zoom-in-right" data-aos-duration="1200">
+        <div class="space-y-8">
+          <div class="inline-block" data-aos="fade-down" data-aos-delay="200">
+            <span class="bg-gradient-to-r from-red-600 via-red-500 to-red-400 text-white px-8 py-3 rounded-full text-sm font-medium shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+              About Hikvision
+            </span>
+          </div>
+          
+          <h2 class="text-3xl lg:text-4xl font-bold bg-gradient-to-r from-gray-900 via-gray-700 to-gray-800 bg-clip-text text-transparent leading-tight tracking-tight" data-aos="fade-up" data-aos-delay="300">
+            Leading the Future of Security Technology
+          </h2>
+          
+          <p class="text-gray-600 text-xl leading-relaxed" data-aos="fade-up" data-aos-delay="400">
+            Hikvision delivers cutting-edge surveillance solutions with advanced AI capabilities. Our comprehensive range of security cameras and systems provide unmatched clarity, reliability, and intelligent features for both commercial and residential applications.
+          </p>
+
+          <!-- Added Key Features Section -->
+          <div class="grid grid-cols-2 gap-6 mt-8" data-aos="fade-up" data-aos-delay="500">
+            <div class="space-y-2">
+              <div class="flex items-center space-x-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span class="font-semibold text-gray-800">AI-Powered Analytics</span>
+              </div>
+              <p class="text-gray-600">Advanced motion detection and object recognition capabilities</p>
+            </div>
+            
+            <div class="space-y-2">
+              <div class="flex items-center space-x-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+                <span class="font-semibold text-gray-800">24/7 Monitoring</span>
+              </div>
+              <p class="text-gray-600">Round-the-clock surveillance with night vision technology</p>
+            </div>
+
+            <div class="space-y-2">
+              <div class="flex items-center space-x-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                </svg>
+                <span class="font-semibold text-gray-800">Enhanced Security</span>
+              </div>
+              <p class="text-gray-600">Military-grade encryption and data protection</p>
+            </div>
+
+            <div class="space-y-2">
+              <div class="flex items-center space-x-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                </svg>
+                <span class="font-semibold text-gray-800">Smart Analytics</span>
+              </div>
+              <p class="text-gray-600">Real-time data analysis and reporting capabilities</p>
+            </div>
+          </div>
+
+          <!-- Added Call to Action -->
+          <div class="mt-8" data-aos="fade-up" data-aos-delay="600">
+            <a href="/Contact" class="inline-flex items-center space-x-2 bg-red-600 text-white px-6 py-3 rounded-lg hover:bg-red-700 transition-colors duration-300">
+              <span>Learn More</span>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Image Side - Simplified -->
+      <div class="order-1 lg:order-2 relative" data-aos="zoom-in-left" data-aos-duration="1200">
+        <!-- Main image container -->
+        <div class="relative">
+          <div class="relative z-10 rounded-3xl overflow-hidden" data-aos="fade-left">
+            <img 
+              src={img.src} 
+              alt="Hikvision security camera" 
+              class="w-3/4 mx-auto h-auto transform hover:scale-105 transition-transform duration-700"
+            />
+          </div>
+          
+          <!-- Stats card -->
+          <div 
+            class="absolute top-8 -right-8 bg-white rounded-xl shadow-xl p-6 z-20 transform hover:scale-105 transition-all duration-300"
+            data-aos="fade-left"
+            data-aos-delay="400"
+          >
+            <div class="text-center space-y-2">
+              <span class="block text-5xl font-bold bg-gradient-to-r from-amber-600 via-red-500 to-red-600 bg-clip-text text-transparent">4K</span>
+              <span class="text-gray-600 text-sm font-medium">Ultra HD Resolution</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="relative min-h-[600px] bg-gradient-to-b from-white via-red-50/30 to-white overflow-hidden">
+    <!-- Enhanced Background Elements with Movement -->
+    <div class="absolute inset-0">
+      <div class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_30%_30%,rgba(239,68,68,0.15),transparent_70%)] animate-pulse-slow"></div>
+      <div class="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(circle_at_70%_70%,rgba(220,38,38,0.12),transparent_70%)] animate-pulse-slower"></div>
+      <div class="absolute hidden lg:block">
+        {[...Array(3)].map((_, i) => (
+          <div class={`floating-shape-${i + 1} absolute rounded-full mix-blend-multiply filter blur-xl opacity-70`}></div>
+        ))}
+      </div>
+    </div>
+
+    <div class="relative max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 py-20">
+      <!-- Section Header -->
+      <div class="text-center space-y-4 mb-16" data-aos="fade-up" data-aos-delay="100">
+        <div class="inline-flex items-center px-4 py-2 bg-red-50 rounded-full mb-4 mx-auto hover:bg-red-100 transition-colors duration-300">
+          <span class="animate-ping w-2 h-2 bg-red-600 rounded-full mr-2"></span>
+          <span class="text-red-600 text-sm font-semibold tracking-wider">Why Choose Us</span>
+        </div>
+        <h2 class="text-4xl sm:text-5xl font-bold text-gray-900 tracking-tight">
+          The Hikvision
+          <span class="relative">
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-600 via-red-700 to-red-800 animate-gradient">Advantage</span>
+            <span class="absolute bottom-0 left-0 w-full h-2 bg-gradient-to-r from-red-600/20 to-red-800/20 blur-sm"></span>
+          </span>
+        </h2>
+      </div>
+
+      <!-- Advantage Cards Grid -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" data-aos="fade-up" data-aos-delay="200">
+        {/* Card 1 */}
+        <div class="bg-white/90 backdrop-blur-sm rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-red-100">
+          <div class="h-14 w-14 rounded-xl bg-gradient-to-br from-red-500 to-red-600 flex items-center justify-center mb-6">
+            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Industry Leadership</h3>
+          <p class="text-gray-600">Global leader in security solutions with over 20 years of innovation and excellence.</p>
+        </div>
+
+        {/* Card 2 */}
+        <div class="bg-white/90 backdrop-blur-sm rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-red-100">
+          <div class="h-14 w-14 rounded-xl bg-gradient-to-br from-red-500 to-red-600 flex items-center justify-center mb-6">
+            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Research & Development</h3>
+          <p class="text-gray-600">Continuous investment in cutting-edge technology and innovative solutions.</p>
+        </div>
+
+        {/* Card 3 */}
+        <div class="bg-white/90 backdrop-blur-sm rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-red-100">
+          <div class="h-14 w-14 rounded-xl bg-gradient-to-br from-red-500 to-red-600 flex items-center justify-center mb-6">
+            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Global Support</h3>
+          <p class="text-gray-600">24/7 customer support and extensive network of certified partners worldwide.</p>
+        </div>
+      </div>
+
+      <!-- Stats Section -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16" data-aos="fade-up" data-aos-delay="300">
+        {/* Stat 1 */}
+        <div class="text-center">
+          <div class="text-4xl font-bold text-red-600 mb-2">150+</div>
+          <div class="text-gray-600">Countries Served</div>
+        </div>
+
+        {/* Stat 2 */}
+        <div class="text-center">
+          <div class="text-4xl font-bold text-red-600 mb-2">20K+</div>
+          <div class="text-gray-600">Employees</div>
+        </div>
+
+        {/* Stat 3 */}
+        <div class="text-center">
+          <div class="text-4xl font-bold text-red-600 mb-2">2500+</div>
+          <div class="text-gray-600">Patents</div>
+        </div>
+
+        {/* Stat 4 */}
+        <div class="text-center">
+          <div class="text-4xl font-bold text-red-600 mb-2">8%</div>
+          <div class="text-gray-600">R&D Investment</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="relative bg-gradient-to-b from-white via-red-50/30 to-white py-24">
+    <!-- Background Elements -->
+    <div class="absolute inset-0">
+      <div class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_30%_30%,rgba(239,68,68,0.15),transparent_70%)] animate-pulse-slow"></div>
+      <div class="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(circle_at_70%_70%,rgba(220,38,38,0.12),transparent_70%)] animate-pulse-slower"></div>
+    </div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+        <span class="text-red-600 font-semibold text-sm uppercase tracking-wider mb-3 block">Featured Products</span>
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          Our Most Popular
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-red-700">Security Solutions</span>
+        </h2>
+        <p class="text-gray-600 text-lg">Discover our top-rated security cameras and surveillance systems</p>
+      </div>
+
+      <!-- Products Grid -->
+      <div class="grid md:grid-cols-3 gap-8 lg:gap-12">
+        {/* Product Card 1 */}
+        <div class="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300" 
+          data-aos="fade-up"
+          data-aos-delay="100">
+          <div class="relative mb-6 rounded-xl overflow-hidden">
+            <div class="aspect-w-4 aspect-h-3">
+              <img 
+                src={img.src} 
+                alt="ColorVu Camera"
+                class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+            <div class="absolute top-4 right-4">
+              <span class="bg-red-600 text-white px-3 py-1 rounded-full text-sm font-medium">Best Seller</span>
+            </div>
+          </div>
+          <div class="space-y-4">
+            <h3 class="text-xl font-bold text-gray-900">ColorVu Turret Camera</h3>
+            <p class="text-gray-600">24/7 colorful imaging with advanced night vision capabilities</p>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center space-x-1">
+                {[...Array(5)].map(() => (
+                  <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                ))}
+              </div>
+              <button class="text-red-600 font-semibold hover:text-red-700 transition-colors">Learn More →</button>
+            </div>
+          </div>
+        </div>
+
+        {/* Product Card 2 */}
+        <div class="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300" 
+          data-aos="fade-up"
+          data-aos-delay="200">
+          <div class="relative mb-6 rounded-xl overflow-hidden">
+            <div class="aspect-w-4 aspect-h-3">
+              <img 
+                src={img.src} 
+                alt="AcuSense Camera"
+                class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+            <div class="absolute top-4 right-4">
+              <span class="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">New</span>
+            </div>
+          </div>
+          <div class="space-y-4">
+            <h3 class="text-xl font-bold text-gray-900">AcuSense NVR</h3>
+            <p class="text-gray-600">AI-powered recording with smart person and vehicle detection</p>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center space-x-1">
+                {[...Array(5)].map(() => (
+                  <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                ))}
+              </div>
+              <button class="text-red-600 font-semibold hover:text-red-700 transition-colors">Learn More →</button>
+            </div>
+          </div>
+        </div>
+
+        {/* Product Card 3 */}
+        <div class="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300" 
+          data-aos="fade-up"
+          data-aos-delay="300">
+          <div class="relative mb-6 rounded-xl overflow-hidden">
+            <div class="aspect-w-4 aspect-h-3">
+              <img 
+                src={img.src} 
+                alt="PTZ Camera"
+                class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+            <div class="absolute top-4 right-4">
+              <span class="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-medium">Popular</span>
+            </div>
+          </div>
+          <div class="space-y-4">
+            <h3 class="text-xl font-bold text-gray-900">DarkFighter PTZ</h3>
+            <p class="text-gray-600">Ultra-low light PTZ with 42x optical zoom capability</p>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center space-x-1">
+                {[...Array(5)].map(() => (
+                  <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                  </svg>
+                ))}
+              </div>
+              <button class="text-red-600 font-semibold hover:text-red-700 transition-colors">Learn More →</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    /* Use CSS custom properties for commonly used values */
+    :root {
+      --float-duration: 6s;
+      --pulse-duration: 4s;
+      --red-primary: rgba(239,68,68,0.15);
+      --red-secondary: rgba(220,38,38,0.12);
+      --blur-amount: blur(20px);
+    }
+
+    /* Combine similar animations */
+    .animate-base {
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: infinite;
+    }
+
+    .animate-gradient {
+      @apply animate-base;
+      background-size: 200% 200%;
+      animation-name: gradient;
+      animation-duration: 8s;
+    }
+
+    .animate-float {
+      @apply animate-base;
+      animation-name: float;
+      animation-duration: var(--float-duration);
+    }
+
+    /* Use common base classes for floating shapes */
+    .floating-shape {
+      @apply absolute rounded-full mix-blend-multiply;
+      filter: var(--blur-amount);
+      opacity: 0.7;
+    }
+
+    .floating-shape-1 {
+      @apply floating-shape;
+      background: var(--red-primary);
+      width: 300px;
+      height: 300px;
+    }
+
+    /* ... rest of the styles ... */
+  </style>
+</section>
